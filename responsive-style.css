@@ -1,0 +1,694 @@
+/* ============================================
+   RESPONSIVE STYLES - Mobile First Approach
+   ============================================ */
+
+/* Mobile Navigation Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Hamburger menu animation */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* ============================================
+   TABLET STYLES (768px and below)
+   ============================================ */
+@media screen and (max-width: 768px) {
+  
+  /* Prevent horizontal scrolling */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  * {
+    max-width: 100%;
+  }
+  
+  /* Header Responsive */
+  .header {
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    max-width: 140px;
+  }
+  
+  /* Mobile Navigation */
+  .mobile-menu-toggle {
+    display: block;
+    order: 3;
+  }
+  
+  .header-center {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 80px 20px 20px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .header-center.active {
+    right: 0;
+  }
+  
+  .header-center .menu {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .header-center .menu .menu-item {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .header-right {
+    display: none;
+  }
+  
+  .header-center .button-nav {
+    display: none;
+  }
+  
+  .header-center.active .button-nav {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Hero Section */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  .hero-content {
+    order: 2;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  
+  .hero-image {
+    order: 1;
+  }
+  
+  .hero-image img,
+  .hero-image svg {
+    max-width: 100%;
+    width: 300px;
+  }
+  
+  .button-hero {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Company Logos */
+  .company-logo {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  .company-logo img {
+    max-width: 120px;
+    height: auto;
+  }
+  
+  /* Content Sections */
+  .content-section {
+    padding: 0 20px;
+    margin: 40px auto;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  /* Story Grid */
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  /* Values Grid */
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .value-card {
+    min-height: auto;
+    padding: 25px;
+  }
+  
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .service-card {
+    padding: 30px 20px;
+  }
+  
+  .service-title {
+    font-size: 24px;
+  }
+  
+  /* Case Studies */
+  .case-study {
+    padding: 30px 20px;
+    border-radius: 25px;
+  }
+  
+  .case-study-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .case-study-stats {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  /* Industries Grid */
+  .industries-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Pricing Grid */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .pricing-card {
+    padding: 30px 20px;
+  }
+  
+  /* Blog Grid */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Featured Article */
+  .featured-article {
+    padding: 30px 20px;
+  }
+  
+  .featured-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .featured-title {
+    font-size: 28px;
+  }
+  
+  /* Newsletter */
+  .newsletter-section {
+    padding: 30px 20px;
+    margin: 40px auto;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  
+  .newsletter-input {
+    margin-bottom: 15px;
+  }
+  
+  /* CTA Sections */
+  .cta-section {
+    padding: 30px 20px;
+    margin: 40px auto;
+  }
+  
+  .cta-section h2 {
+    font-size: 28px;
+  }
+  
+  /* FAQ */
+  .faq-question {
+    padding: 20px;
+  }
+  
+  .faq-question h4 {
+    font-size: 18px;
+  }
+  
+  .faq-answer {
+    padding: 20px;
+  }
+}
+
+/* ============================================
+   MOBILE STYLES (480px and below)
+   ============================================ */
+@media screen and (max-width: 480px) {
+  
+  /* Prevent horizontal scrolling on mobile */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Header */
+  .header {
+    padding: 12px 15px;
+    width: 100%;
+  }
+  
+  .logo {
+    max-width: 120px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    padding: 0 15px;
+    gap: 20px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .hero-content h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  .hero-content p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .hero-image img,
+  .hero-image svg {
+    width: 250px;
+  }
+  
+  /* Company Logos */
+  .company-logo {
+    padding: 15px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .company-logo img {
+    max-width: 100px;
+  }
+  
+  /* Content Sections */
+  .content-section {
+    padding: 0 15px;
+    margin: 30px auto;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+  
+  /* Service Cards */
+  .service-card {
+    padding: 25px 15px;
+  }
+  
+  .service-title {
+    font-size: 20px;
+  }
+  
+  .service-description {
+    font-size: 16px;
+  }
+  
+  /* Case Studies */
+  .case-study {
+    padding: 25px 15px;
+    border-radius: 20px;
+  }
+  
+  .case-study h3 {
+    font-size: 24px;
+  }
+  
+  /* Pricing Cards */
+  .pricing-card {
+    padding: 25px 15px;
+  }
+  
+  .pricing-title {
+    font-size: 24px;
+  }
+  
+  .price-amount {
+    font-size: 36px;
+  }
+  
+  /* Blog Cards */
+  .blog-image {
+    height: 150px;
+  }
+  
+  .blog-content {
+    padding: 20px;
+  }
+  
+  .blog-title {
+    font-size: 18px;
+  }
+  
+  /* Featured Article */
+  .featured-article {
+    padding: 25px 15px;
+  }
+  
+  .featured-title {
+    font-size: 24px;
+  }
+  
+  /* Newsletter */
+  .newsletter-section {
+    padding: 25px 15px;
+  }
+  
+  .newsletter-section h2 {
+    font-size: 28px;
+  }
+  
+  /* CTA Sections */
+  .cta-section {
+    padding: 25px 15px;
+  }
+  
+  .cta-section h2 {
+    font-size: 24px;
+  }
+  
+  /* FAQ */
+  .faq-question {
+    padding: 15px;
+  }
+  
+  .faq-question h4 {
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   LARGE MOBILE STYLES (576px and below)
+   ============================================ */
+@media screen and (max-width: 576px) {
+  
+  /* Adjust button sizes */
+  .button-hero,
+  .button-nav,
+  .pricing-btn,
+  .case-study-btn,
+  .featured-btn,
+  .newsletter-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  
+  /* Adjust card padding */
+  .value-card,
+  .industry-card {
+    padding: 20px;
+    min-height: auto;
+  }
+  
+  /* Adjust icon sizes */
+  .value-icon,
+  .industry-icon {
+    font-size: 36px;
+  }
+  
+  /* Adjust stats display */
+  .stat-number {
+    font-size: 36px;
+  }
+  
+  /* Adjust article meta */
+  .article-meta {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  /* Adjust blog meta */
+  .blog-meta {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES FOR RESPONSIVE DESIGN
+   ============================================ */
+
+/* Hide elements on mobile */
+.hide-mobile {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Show elements only on mobile */
+.show-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .show-mobile {
+    display: block !important;
+  }
+}
+
+/* Text alignment utilities */
+@media screen and (max-width: 768px) {
+  .text-center-mobile {
+    text-align: center !important;
+  }
+  
+  .text-left-mobile {
+    text-align: left !important;
+  }
+}
+
+/* Spacing utilities for mobile */
+@media screen and (max-width: 768px) {
+  .mb-mobile-20 {
+    margin-bottom: 20px !important;
+  }
+  
+  .mt-mobile-20 {
+    margin-top: 20px !important;
+  }
+  
+  .p-mobile-15 {
+    padding: 15px !important;
+  }
+}
+
+/* ============================================
+   RESPONSIVE IMAGES AND MEDIA
+   ============================================ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive video embeds */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================
+   TOUCH-FRIENDLY IMPROVEMENTS
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets */
+  .header-right .menu .menu-item a,
+  .button-nav,
+  .button-hero,
+  .service-arrow,
+  .pricing-btn,
+  .case-study-btn,
+  .featured-btn,
+  .newsletter-btn,
+  .faq-question {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Remove hover effects on touch devices */
+  .service-card:hover,
+  .case-study:hover,
+  .pricing-card:hover,
+  .blog-card:hover,
+  .value-card:hover,
+  .industry-card:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================ */
+
+/* Focus styles for keyboard navigation */
+.header-right .menu .menu-item a:focus,
+.button-nav:focus,
+.button-hero:focus,
+.service-arrow:focus,
+.pricing-btn:focus,
+.case-study-btn:focus,
+.featured-btn:focus,
+.newsletter-btn:focus,
+.newsletter-input:focus {
+  outline: 2px solid #B9FF66;
+  outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .service-card,
+  .case-study,
+  .pricing-card,
+  .blog-card,
+  .value-card,
+  .industry-card {
+    border: 2px solid #000;
+  }
+}
